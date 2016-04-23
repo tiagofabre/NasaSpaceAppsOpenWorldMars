@@ -53,7 +53,7 @@ public class Map : MonoBehaviour
 				procMesh.uv = uvs;
 				procMesh.triangles = tris.ToArray ();
 				procMesh.RecalculateNormals (); //Determines which way the triangles are facing
-		plane.transform.position = new Vector3(transform.position.x + offset,transform.position.y, transform.position.z);
+				plane.transform.position = new Vector3(transform.position.x + offset,transform.position.y, transform.position.z);
 				plane.GetComponent<MeshFilter> ().mesh = procMesh; //Assign Mesh object to MeshFilter
 				plane.gameObject.GetComponent<MeshRenderer> ().material = mat;
 				plane.AddComponent<MeshCollider> ();

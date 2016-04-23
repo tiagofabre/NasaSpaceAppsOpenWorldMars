@@ -12,9 +12,10 @@ public class TileManager : MonoBehaviour {
 
 	public List<Map> maps;
 	public int positionX = 0;
-	public float distance = 299;
+	private float distance = 0;
 	private int offsetX = 0;
 	private int lastIndex = 0;
+	private int lastRemotionIndex = 0;
 
 	void Awake()
 	{
@@ -27,8 +28,7 @@ public class TileManager : MonoBehaviour {
 	}
 
 	void Update () {
-
-		if(target.transform.position.x > distance/2 + offsetX * distance)
+		if(target.transform.position.x > distance/2 + (offsetX * distance))
 		{
 			UseTile(lastIndex++);
 			offsetX++;
@@ -36,11 +36,20 @@ public class TileManager : MonoBehaviour {
 	}
 
 	void UseTile(int i=0, int direction=1){
+
 		Map m = transform.gameObject.AddComponent<Map>();
 		maps.Add(m);
 		m.offset = distance * i;
 		m.hMap = hMap;
 		m.mat = mat;
 		m.resolution = resolution;
+
+		if(lastIndex > initialTiles || lastRemotionIndex > 0)
+		{
+			Destroy(maps[lastRemotionIndex].plane.gameObject);
+			Destroy((Map)maps[lastRemotionIndex]);
+			maps.RemoveAt(lastRemotionIndex);
+			lastRemotionIndex++;
+		}
 	}
 }
