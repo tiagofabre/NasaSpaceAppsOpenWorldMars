@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\map.cs">
     <Files>
-      <File FileName="Assets\map.cs" Line="44" Column="45" />
+      <File FileName="Assets\map.cs" Line="56" Column="65" />
       <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" Line="50" Column="57" />
     </Files>
   </MonoDevelop.Ide.Workbench>

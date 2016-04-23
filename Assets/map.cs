@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class map : MonoBehaviour
+public class Map : MonoBehaviour
 {
 		public Texture2D hMap;
 		public Material mat;
@@ -10,7 +10,7 @@ public class map : MonoBehaviour
 		public GameObject plane;
 
 		
-		public int offset;
+		public float offset;
 
 		Mesh procMesh;
 		List<Vector3> verts;
@@ -31,7 +31,7 @@ public class map : MonoBehaviour
 				for (int i = 0; i < resolution; i++) {
 						for (int j = 0; j < resolution; j++) {
 								//Add each new vertex in the plane
-								verts.Add (new Vector3 (i, hMap.GetPixel (i + offset, j).grayscale * 50, j));
+								verts.Add (new Vector3 (i, hMap.GetPixel (i + (int)offset, j).grayscale * 50, j));
 								//Skip if a new square on the plane hasn't been formed
 								if (i == 0 || j == 0)
 										continue;
