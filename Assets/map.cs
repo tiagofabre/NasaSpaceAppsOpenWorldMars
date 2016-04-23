@@ -27,7 +27,6 @@ public class map : MonoBehaviour
 				verts = new List<Vector3> ();
 				tris = new List<int> ();
 				
-				transform.localPosition = new Vector3(transform.localPosition.x + offset,transform.localPosition.y, transform.localPosition.z);
 				//Bottom left section of the map, other sections are similar
 				for (int i = 0; i < resolution; i++) {
 						for (int j = 0; j < resolution; j++) {
@@ -54,6 +53,7 @@ public class map : MonoBehaviour
 				procMesh.uv = uvs;
 				procMesh.triangles = tris.ToArray ();
 				procMesh.RecalculateNormals (); //Determines which way the triangles are facing
+		plane.transform.position = new Vector3(transform.position.x + offset,transform.position.y, transform.position.z);
 				plane.GetComponent<MeshFilter> ().mesh = procMesh; //Assign Mesh object to MeshFilter
 				plane.gameObject.GetComponent<MeshRenderer> ().material = mat;
 				plane.AddComponent<MeshCollider> ();
