@@ -24,3 +24,10 @@ The colorized dataset has colors representing the height map of mars, so I could
 The viking coor mosaic is used to set textures in the mashes to make it similar iwth the map os Mars.
 
 ![alt tag](https://github.com/tiagofabre/NasaSpaceAppsOpenWorldMars/blob/master/ezgif.com-crop.gif)
+
+Video Example
+
+
+[![IMAGE ALT TEXT](http://i.imgur.com/MXxcZ2k.png)](https://youtu.be/wSQbInqCgt "Video Title")
+
+
